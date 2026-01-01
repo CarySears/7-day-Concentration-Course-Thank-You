@@ -252,6 +252,15 @@
             margin: 30px 0;
         }
         
+        .purchase-form-embed {
+            width: 100%;
+            height: 1265px; /* matches form's configured height */
+            margin-top: 20px;
+            border-radius: 12px;
+            overflow: hidden;
+            background: #ffffff;
+        }
+
         .checkbox-wrapper {
             display: flex;
             align-items: flex-start;
@@ -466,11 +475,29 @@
             </div>
 
             <div class="upgrade-checkbox-container">
-                <div class="checkbox-wrapper">
-                    <input type="checkbox" id="upgrade-checkbox" onchange="updateUpgrade()">
-                    <div class="checkbox-content">
-                        <div class="checkbox-title">Yes! Unlock the 9-Week Quantum Human Blueprint for $297</div>
-                        <div class="checkbox-subtitle">Normally $497 – special upgrade price today only!</div>
+                <div class="checkbox-content" style="text-align: center;">
+                    <div class="checkbox-title">Yes! Unlock the 9-Week Quantum Human Blueprint for $297</div>
+                    <div class="checkbox-subtitle">Normally $497 – special upgrade price today only!</div>
+
+                    <div class="purchase-form-embed" aria-label="Quantum Human Blueprint purchase form">
+                        <iframe
+                            src="https://link.healingcosmos.com/widget/form/zkzaaolfkR7o3lCa1mqh"
+                            style="width:100%;height:100%;border:none;border-radius:3px"
+                            id="inline-zkzaaolfkR7o3lCa1mqh"
+                            data-layout="{'id':'INLINE'}"
+                            data-trigger-type="alwaysShow"
+                            data-trigger-value=""
+                            data-activation-type="alwaysActivated"
+                            data-activation-value=""
+                            data-deactivation-type="neverDeactivate"
+                            data-deactivation-value=""
+                            data-form-name="Quantum Human Blueprint"
+                            data-height="1265"
+                            data-layout-iframe-id="inline-zkzaaolfkR7o3lCa1mqh"
+                            data-form-id="zkzaaolfkR7o3lCa1mqh"
+                            title="Quantum Human Blueprint"
+                        >
+                        </iframe>
                     </div>
                 </div>
                 
@@ -481,8 +508,6 @@
             </div>
 
             <div class="cta-container">
-                <a href="#" class="cta-button" id="upgrade-btn" style="opacity: 0.5; pointer-events: none;">Select Upgrade Above to Continue</a>
-                
                 <a href="#" class="skip-link">No thanks—take me to my 7-Day Course →</a>
                 
                 <div style="text-align: center; margin-top: 30px;">
@@ -524,23 +549,6 @@
         // Start countdown
         updateCountdown();
         
-        // Handle upgrade checkbox
-        function updateUpgrade() {
-            const checkbox = document.getElementById('upgrade-checkbox');
-            const upgradeBtn = document.getElementById('upgrade-btn');
-            
-            if (checkbox.checked) {
-                upgradeBtn.textContent = 'Add Quantum Human Blueprint - $297';
-                upgradeBtn.style.opacity = '1';
-                upgradeBtn.style.pointerEvents = 'auto';
-                upgradeBtn.style.background = '#10B981';
-            } else {
-                upgradeBtn.textContent = 'Select Upgrade Above to Continue';
-                upgradeBtn.style.opacity = '0.5';
-                upgradeBtn.style.pointerEvents = 'none';
-            }
-        }
-        
         // Add some celebration confetti effect
         function createConfetti() {
             const colors = ['#10B981', '#87CEEB', '#FF6B6B', '#FFD700'];
@@ -576,5 +584,7 @@
             setTimeout(createConfetti, 500);
         });
     </script>
+
+    <script src="https://link.healingcosmos.com/js/form_embed.js"></script>
 </body>
 </html>
